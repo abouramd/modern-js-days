@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dark mode</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    :root {
+      --pc: #fff;
+      --sc: #00e;
+      --fc: #000;
+    }
+
+    body.dark {
+      --fc: #fff;
+      --sc: #e00;
+      --pc: #000;
+    }
+
+    * {
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      font-weight: 200;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--pc);
+      color: var(--fc);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: 1fr auto 1fr;
+    }
+
+    .box {
+      grid-column-start: 2;
+      grid-row-start: 2;
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      border: 3px solid var(--sc);
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .box .switcher {
+      border: inherit;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: inherit;
+      color: var(--fc);
+      background-color: transparent;
+    }
+
+    .box .switcher:hover {
+      background-color: var(--sc);
+    }
+  </style>
+</head>
+
+<body id="body" class="dark">
+  <div class="box">
+    <h1>dark mode test</h1>
+    <button type="button" class="switcher" onclick="DarkLight()">Switch</button>
+  </div>
+  <script>
+    function DarkLight() {
+      var body = document.getElementById("body");
+      body.className = body.className === "dark" ? "light" : "dark";
+    }
+  </script>
+</body>
+
+</html>

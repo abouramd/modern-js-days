@@ -1,0 +1,5 @@
+Automated testing with Mocha
+- Behavior Driven Development (BDD): BDD is three things in one: tests AND documentation AND examples.
+  
+
+

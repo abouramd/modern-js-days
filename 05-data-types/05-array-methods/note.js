@@ -286,3 +286,22 @@
 
 
 
+
+// fill 
+{
+  let arr = new Array(20);
+
+  arr.fill(1, 0, 10); // fill from 0 to 10 with 1 
+  arr.fill(2, 5, 20); // fill from 5 to 20 with 2 
+
+  console.log(arr);
+}
+
+
+
+
+
+
+
+
+

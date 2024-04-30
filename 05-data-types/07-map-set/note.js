@@ -80,6 +80,31 @@
 
   // Object.entries: Map from Object
 
+  {
+    // When a Map is created, we can pass an array (or another iterable) with key/value pairs for initialization, 
+    let map = new Map([
+      ['1', 'str1'],
+      [1, 'num1'],
+      [true, 'bool1'],
+    ]);
+
+    console.log(map.get(1)); // num1
+
+    // to create a map from an object 
+
+    let obj = {
+      name: "john",
+      age: 30,
+    };
+
+    map = new Map(Object.entries(obj));
+
+    console.log(map.get('name')); // jhon 
+
+
+
+  }
+  // Object.fromEntries(map.entries()); // make a plain object 
 }
 
 

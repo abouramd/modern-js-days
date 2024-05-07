@@ -41,4 +41,9 @@
    * weakMap.has(key)
    */
 
+  // use cases
+  {
+    
+  }
+
 }

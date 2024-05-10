@@ -79,10 +79,42 @@
         // When a Date object is converted to number, it becomes the timestamp same as date.getTime():
 
         let date = new Date();
-        alert(+date); // the number of milliseconds, same as date.getTime()
+        console.log(+date); // the number of milliseconds, same as date.getTime()
     }
 
     //date().snow
 
+    {
+        // There’s a special method Date.now() that returns the current timestamp.
+        let start = Date.now(); // milliseconds count from 1 Jan 1970
 
+        // do the job
+        for (let i = 0; i < 100000; i++) {
+            let doSomething = i * i * i;
+        }
+
+        let end = Date.now(); // done
+
+        console.log(`The loop took ${end - start} ms`); // subtract numbers, not dates
+    }
+
+    // Date.parse from a string
+    {
+        /* The string format should be: YYYY-MM-DDTHH:mm:ss.sssZ, where:
+
+        YYYY-MM-DD – is the date: year-month-day.
+        The character "T" is used as the delimiter.
+        HH:mm:ss.sss – is the time: hours, minutes, seconds and milliseconds.
+        The optional 'Z' part denotes the time zone in the format +-hh:mm. A single letter Z would mean UTC+0.
+        Shorter variants are also possible, like YYYY-MM-DD or YYYY-MM or even YYYY.
+
+        The call to Date.parse(str) parses the string in the given format and returns the timestamp (number of milliseconds from 1 Jan 1970 UTC+0). If the format is invalid, returns NaN.
+
+        For instance:
+		*/
+
+        let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
+
+        console.log(ms); // 1327611110417  (timestamp)
+    }
 }

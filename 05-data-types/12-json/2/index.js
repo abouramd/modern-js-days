@@ -12,13 +12,11 @@ let meetup = {
 room.occupiedBy = meetup;
 meetup.self = meetup;
 
+// console.log(meetup);
+
 console.log(JSON.stringify(meetup, function replacer(key, value) {
   /* your code */
-  let arr = ["title", "occupiedBy", "name", "place", "number"];
-  console.log(arr.includes(key), key);
-  if (key && value != meetup)
-    return value;
-  return undefined;
+  if (key && value == meetup) return undefined; return value;
 }));
 
 /* result should be:
